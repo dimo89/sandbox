@@ -59,7 +59,7 @@ class BME280(object):
         self._mode = mode
         # Create I2C device.
         if i2c is None:
-            import Adafruit_GPIO.I2C as I2C
+            import mraa as I2C # test
             i2c = I2C
         self._device = i2c.get_i2c_device(address, **kwargs)
         # Load calibration values.
